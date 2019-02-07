@@ -6,9 +6,6 @@ import {
     ADD_NEW_POST
 } from './types';
 
-// Instruments
-import { api } from '../../REST';
-
 export const fillPosts = (posts) => {
     return {
         type:    FILL_POSTS,
@@ -23,20 +20,15 @@ export const createPost = (post) => {
     };
 };
 
-export const fetchPostsAsync = () => async (dispatch) => {
-    dispatch({
+export const fetchPostsAsync = () => {
+    return {
         type: FETCH_POST_ASYNC,
-    });
-
-    const response = await api.posts.fetch();
-    const result = await response.json();
-
-    dispatch(fillPosts(result.data));
+    };
 };
 
 export const createPostAsync = (comment) => {
     return {
-        type: CREATE_POST_ASYNC,
+        type:    CREATE_POST_ASYNC,
         payload: comment,
     };
 };
