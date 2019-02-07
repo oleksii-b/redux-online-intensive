@@ -1,7 +1,8 @@
 // Types
 import {
     START_FETCHING,
-    STOP_FETCHING
+    STOP_FETCHING,
+    EMIT_ERROR
 } from './types';
 
 export const startFetching = () => {
@@ -13,5 +14,14 @@ export const startFetching = () => {
 export const stopFetching = () => {
     return {
         type: STOP_FETCHING,
+    };
+};
+
+export const emitError = (error, meta = null) => {
+    return {
+        type: EMIT_ERROR,
+        payload: error,
+        error: true,
+        meta,
     };
 };

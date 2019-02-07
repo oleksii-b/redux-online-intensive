@@ -2,7 +2,7 @@ import { put, apply } from 'redux-saga/effects';
 
 import { api } from '../../../../REST';
 import { createPost as createPostAC } from '../../actions';
-import { startFetching, stopFetching } from '../../../ui/actions'; 
+import { startFetching, stopFetching, emitError } from '../../../ui/actions';
 
 export function* createPost (action) {
     try {
@@ -18,7 +18,7 @@ export function* createPost (action) {
 
         yield put(createPostAC(result.data));
     } catch (error) {
-        console.log('createPost worker', error);
+        yield put(emitError(error, 'createPost worker'));
     } finally {
         yield put(stopFetching());
     }
