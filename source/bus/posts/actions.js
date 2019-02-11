@@ -3,7 +3,7 @@ import {
     FETCH_POST_ASYNC,
     CREATE_POST_ASYNC,
     FILL_POSTS,
-    ADD_NEW_POST
+    CREATE_POST
 } from './types';
 
 export const fillPosts = (posts) => {
@@ -15,7 +15,7 @@ export const fillPosts = (posts) => {
 
 export const createPost = (post) => {
     return {
-        type:    ADD_NEW_POST,
+        type:    CREATE_POST,
         payload: post,
     };
 };

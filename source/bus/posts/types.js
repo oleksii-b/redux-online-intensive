@@ -1,6 +1,6 @@
 // Sync
 export const FILL_POSTS = 'FILL_POSTS';
-export const ADD_NEW_POST = 'ADD_NEW_POST';
+export const CREATE_POST = 'CREATE_POST';
 
 // Async
 export const FETCH_POST_ASYNC = 'FETCH_POST_ASYNC';
