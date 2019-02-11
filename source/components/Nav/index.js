@@ -1,7 +1,7 @@
 // Core
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { NavLink, withRouter } from 'react-router-dom';
+import { NavLink, } from 'react-router-dom';
 import cx from 'classnames';
 
 // Instruments
@@ -13,7 +13,6 @@ const mapStateToProps = (state) => ({
     isAuthenticated: state.auth.get('isAuthenticated'),
 });
 
-@withRouter
 @connect(mapStateToProps)
 export default class Nav extends Component {
     static defaultProps = {
