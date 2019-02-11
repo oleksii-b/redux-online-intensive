@@ -1,7 +1,8 @@
 // Types
 import {
     AUTHENTICATE,
-    SIGNUP_ASYNC
+    SIGNUP_ASYNC,
+    SIGNIN_ASYNC,
 } from './types';
 
 // Sync
@@ -15,6 +16,13 @@ export const authenticate = () => {
 export const signupAsync = (userData) => {
     return {
         type: SIGNUP_ASYNC,
+        payload: userData
+    };
+};
+
+export const signinAsync = (userData) => {
+    return {
+        type: SIGNIN_ASYNC,
         payload: userData
     };
 };
